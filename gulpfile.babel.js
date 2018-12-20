@@ -48,7 +48,7 @@ gulp.task('styles-dev', () => {
       })
     ]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./doc/css/'))
+    .pipe(gulp.dest('./docs/css/'))
     .pipe(server.stream({match: '**/*.css'}))
 })
 
@@ -70,7 +70,7 @@ gulp.task('styles-build', () => {
         })
       ]
     ))
-    .pipe(gulp.dest('./doc/css/'))
+    .pipe(gulp.dest('./docs/css/'))
 })
 
 gulp.task('pug-dev', () =>
@@ -80,7 +80,7 @@ gulp.task('pug-dev', () =>
       pretty: true,
       basedir: './src/pug'
     }))
-    .pipe(gulp.dest('./doc'))
+    .pipe(gulp.dest('./docs'))
 )
 
 gulp.task('pug-build', () =>
@@ -89,7 +89,7 @@ gulp.task('pug-build', () =>
     .pipe(pug({
       basedir: './src/pug'
     }))
-    .pipe(gulp.dest('./doc'))
+    .pipe(gulp.dest('./docs'))
 )
 
 gulp.task('scripts-dev', () =>
@@ -112,7 +112,7 @@ gulp.task('scripts-dev', () =>
     }))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./doc/js'))
+    .pipe(gulp.dest('./docs/js'))
 )
 
 gulp.task('scripts-build', () =>
@@ -135,7 +135,7 @@ gulp.task('scripts-build', () =>
     }))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./doc/js'))
+    .pipe(gulp.dest('./docs/js'))
 )
 
 gulp.task('images-build', () => {
@@ -146,28 +146,28 @@ gulp.task('images-build', () => {
       imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest('./doc/assets/img'))
+    .pipe(gulp.dest('./docs/assets/img'))
 })
 
 gulp.task('images-dev', () => {
   gulp.src('./src/img/**/**')
-    .pipe(gulp.dest('./doc/assets/img'))
+    .pipe(gulp.dest('./docs/assets/img'))
 })
 
 gulp.task('sitemap', () => {
-  gulp.src('./doc/**/*.html', {
+  gulp.src('./docs/**/*.html', {
     read: false
   })
     .pipe(sitemap({
       siteUrl: 'https://example.com' // remplazar por tu dominio
     }))
-    .pipe(gulp.dest('./doc'))
+    .pipe(gulp.dest('./docs'))
 })
 
 gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'], () => {
   server.init({
     server: {
-      baseDir: './doc'
+      baseDir: './docs'
     }
   })
 
@@ -178,11 +178,11 @@ gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'], () => {
 })
 
 gulp.task('cache', () => {
-  gulp.src('./doc/**/*.html')
+  gulp.src('./docs/**/*.html')
     .pipe(cachebust({
       type: 'timestamp'
     }))
-    .pipe(gulp.dest('./doc'))
+    .pipe(gulp.dest('./docs'))
 })
 
 
