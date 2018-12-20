@@ -1,0 +1,20 @@
+.section__boyfriends{
+    &__nombre{
+        @extend .materialize-red-text, .text-lighten-2;
+        line-height: 1.5;
+    }
+    &__brigro{
+        background: url(http://demo3.ltheme.com/wordpress-one-page-themes/lt-wedding/wp-content/themes/lt_wedding_onepage/images/border_title.png) no-repeat center center;
+        color: #666; // Definirlo en variables
+        font-size: .9em;
+        font-weight: bold;
+    }
+    &__simbolo{
+        font-size: 70px;
+        @extend .materialize-red-text, .text-lighten-2;
+        margin-top: 70px;
+    }
+    p{
+        color: #666; // Definirlo en variables
+    }
+}

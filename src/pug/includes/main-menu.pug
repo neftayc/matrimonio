@@ -1,0 +1,15 @@
+nav
+  .nav-wrapper.center-align
+    a.brand-logo.hide-on-large-only.left(href="#!") 
+      img(src="http://demo3.ltheme.com/wordpress-one-page-themes/lt-wedding/wp-content/uploads/2016/01/logo.png", alt="")
+    a.sidenav-trigger.right(href="#" data-target="mobile-demo")
+      i.material-icons menu
+    ul.hide-on-med-and-down.main-menu
+      each page in pages
+        li
+          a(href=page.url itemprop="name")= page.title
+
+ul.sidenav#mobile-demo
+  each page in pages
+    li
+      a(href=page.url itemprop="name")= page.title

@@ -1,0 +1,25 @@
+block config
+  include variables
+doctype html
+html(lang="es")
+  head
+    title My awesome title
+    meta(charset="utf-8")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:site" content=twitterAccount)
+    meta(property="og:title" content=pageTitle)
+    meta(property="og:description" content=pageDescription)
+    meta(property="og:image" content=pageImage)
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet")
+    link(rel="stylesheet" href="css/styles.css")
+    link(rel="shortcut icon" href="img/favicon.png")
+    
+  body
+    block main
+    
+    script(src="js/scripts-min.js")

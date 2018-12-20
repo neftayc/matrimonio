@@ -1,0 +1,63 @@
+.section__contacto{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../assets/img/banner_contacto.jpg);
+    background-attachment: fixed;
+    padding: 50px 0;
+}
+.img_contacto{
+    transform: rotate(180deg)
+}
+.img_content{
+    position: relative;
+    @media #{$medium-and-up} {
+        max-width: 60%;
+    }
+    @media #{$large-and-up} {
+        max-width: 80%;
+    }
+    @media #{$extra-large-and-up} {
+        max-width: 85%;
+    }
+        
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    &::after{
+        content: "Contactanos";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        text-shadow: -1px 0 4px white;
+        color: #fcb843;
+        letter-spacing: 2px;
+        font-style: italic;
+        line-height: 2;
+
+        $height-contactos: 2.1rem;
+        $i: 0;
+        @while $i <= $intervals {
+            @media only screen and (min-width : 360 + ($i * $interval-size)) {
+            font-size: $height-contactos * (1 + (.02 * $i));
+            }
+            $i: $i + 1;
+        }
+
+        // Handle below 360px screen
+        @media only screen and (max-width: 360px) {
+            font-size: $height-contactos;
+        }
+        @media #{$extra-large-and-up} {
+            font-size: 3.5rem;
+          }
+
+    }
+}
+.title__contactos{
+
+}

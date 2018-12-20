@@ -1,0 +1,42 @@
+
+@media #{$medium-and-up} {
+    .container {
+      width: 85%;
+    }
+  }
+  @media #{$large-and-up} {
+    .container {
+      width: 90%;
+    }
+  }
+
+
+  nav {
+    background-color: white;
+
+  
+  
+    // Navbar Links
+    ul {
+      li {
+  
+        &.active {
+            background-color: white;
+            a{
+                color: $primary-color;
+                background-color: white;
+            }
+        }
+      }
+      a {
+
+        &:hover {
+            color: $primary-color;
+            background-color: white;
+        }
+      }
+  
+    }
+  
+  }
+  

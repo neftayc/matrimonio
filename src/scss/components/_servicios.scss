@@ -1,0 +1,33 @@
+.section__servicios{
+    .card{
+        min-height: 30em;
+        
+    }
+    .card-image{
+        .card-title{
+            background: rgba(0, 0, 0, 0.5);
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            width: 100%;
+            max-height: 100px;
+            padding: 15px;
+            letter-spacing: 2px;
+        }
+    }
+    .card-content{
+        ul{
+            position: relative;
+            margin-top: 10px;
+            li{
+                line-height: 1.5;
+                margin-left: 15px;
+                font-size: 1em;
+                &::before{
+                    content: "*";
+                    position: absolute;
+                    left: 0;
+                }  
+            }
+        }
+    }
+}

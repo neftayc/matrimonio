@@ -1,0 +1,65 @@
+.section{
+    &__header{
+        margin-bottom: 50px;
+    }
+    &__title{
+        @extend .materialize-red-text, .text-lighten-2;
+        font-size: 5em;
+        letter-spacing: 1.5px;
+        padding-bottom: 10px;
+        font-family: 'Great Vibes', cursive;
+    }
+    &__subtitle{
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-size: 16px;
+        padding-bottom: 30px;
+        color: #666; // Definirlo en variables
+        background: url(http://demo3.ltheme.com/wordpress-one-page-themes/lt-wedding/wp-content/themes/lt_wedding_onepage/images/border_title_prs4.png) no-repeat bottom center;
+    }
+}
+
+.section__about{
+
+}
+
+.banner{
+    background: url(../assets/img/banner-about.jpg) no-repeat fixed center center;
+    color: #000;
+    padding: 0;
+}
+.banner-parallax{
+    position: relative;
+    background: url(../assets/img/arrow.png) repeat-x top scroll rgba($primary-color,.7);
+    padding: 80px 0;
+    .section__header{
+        margin-bottom: 20px;
+    }
+    .section__title{
+        @extend .black-text;
+        
+        font-size: 3em;
+        padding-bottom: 0;
+    }
+    p{
+        font-size: 1.1em;
+    }
+    .marca{
+        font-family: 'Great Vibes', cursive;
+        font-size: 2em;
+    }
+    .row{
+        margin-bottom: 0;
+    }
+
+    &::before{
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        background: url(../assets/img/arrow1.png) repeat-x bottom;
+    }
+}
+.banner-content{
+    z-index: 1024;
+}

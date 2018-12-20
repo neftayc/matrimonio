@@ -1,0 +1,24 @@
+.section__count{
+    .section__title{
+        @extend .white-text;
+    }
+}
+.section__count__content{
+    @extend .materialize-red-text, .text-lighten-2;
+    border-radius: 50%;
+    width: 9em;
+    height: 9em;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @media #{$large-and-up} {
+        font-size: 1.6rem;
+    }
+
+    & .fecha__number{
+        font-size: 1.5em;
+    }
+}
+

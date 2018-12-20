@@ -1,0 +1,126 @@
+.section__evento{
+    background-color: #f8f7f3;
+}
+
+.section__eventos{
+    h4{
+        font-family: 'Great Vibes', cursive;
+        font-size: 3.5em;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    &>.decorador{
+        position: relative;
+        &::before{
+            content: " ";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url(../assets/img/line.png) repeat-x center center;
+            z-index: -1;
+        }     
+    }
+    .tabs{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        background: transparent;
+        .tabs-item{
+            position: relative;
+            margin-left: 15px;
+            margin-right: 15px;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            $height-tabs: 5em;
+            $fz-tabs: 1em;
+            $i: 0;
+            @while $i <= $intervals {
+                @media only screen and (min-width : 360 + ($i * $interval-size)) {
+                max-width: $height-tabs * (1 + (.045 * $i));
+                font-size: $fz-tabs * (1 + (.02 * $i));
+                }
+                $i: $i + 1;
+            }
+
+            // Handle below 360px screen
+            @media only screen and (max-width: 360px) {
+                max-width: $height-tabs;
+                font-size: $fz-tabs;
+            }
+            .circle{
+                border: 4px solid rgba(170, 47, 47, 0.3);
+            }
+            &.tab {
+                /* text-align: center; */
+                height: auto;
+            }
+            
+        }
+        .indicator{
+            background: none;
+        }
+        span{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            top: 10px;
+        }
+        a.active{
+            background-color: rgba(246, 178, 181, 0.2);
+            border-bottom: 3px solid red;
+        }
+    }
+}
+
+
+
+.sociales_content{
+
+    &__img{
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    p{
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.5em;
+        margin-top: 0;
+    }
+}
+.evento{
+    @extend .white;
+    border-radius: 5px;
+    &__header{
+        @extend .materialize-red, .lighten-2;
+        @extend .white-text;
+        padding: 25px 0;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 100%;
+    }
+    &__title{
+        font-size: 1.2em;
+        margin: 0;
+    }
+    &__content{
+        padding: 20px 10px 30px;
+    }
+    &__fecha{
+        font-size: .85em;
+    }
+    &__person{
+        font-weight: bold;
+    }
+    &__text{
+        margin: 0;
+        margin-top: 1.5rem;
+        font-size: .9em;
+        line-height: 1.8;
+    }
+}
